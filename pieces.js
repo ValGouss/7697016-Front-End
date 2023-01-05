@@ -4,7 +4,11 @@ const pieces = await reponse.json();
 
 for (let i = 0; i < pieces.length; i++) {
 
-    //Création des balises
+    // Récupération de l'élément du DOM qui accueillera les fiches
+    const sectionFiches = document.querySelector(".fiches");
+    // Création d’une balise dédiée à une pièce automobile
+    const pieceElement = document.createElement("article");
+    
     const article = pieces[i];
     const imageElement = document.createElement('img');
     imageElement.src = article.image;
