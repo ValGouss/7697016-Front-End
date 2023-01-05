@@ -26,12 +26,12 @@ for (let i = 0; i < pieces.length; i++) {
 
 
     //Ratachement de nos balises au DOM
-    const sectionFiches = document.querySelector(".fiches");
-    sectionFiches.appendChild(imageElement);
-    sectionFiches.appendChild(nomElement);
-    sectionFiches.appendChild(prixElement);
-    sectionFiches.appendChild(categorieElement);
-    sectionFiches.appendChild(descriptionElement);
-    sectionFiches.appendChild(stockElement);
+    sectionFiches.appendChild(pieceElement);
+    pieceElement.appendChild(imageElement);
+    pieceElement.appendChild(nomElement);
+    pieceElement.appendChild(prixElement);
+    pieceElement.appendChild(categorieElement);
+    pieceElement.appendChild(descriptionElement);
+    pieceElement.appendChild(stockElement);
 
 }
