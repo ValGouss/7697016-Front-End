@@ -9,7 +9,7 @@ imageElement.src = article.image;
 const nomElement = document.createElement('h2');
 nomElement.innerText = article.nom;
 const prixElement = document.createElement('p');
-prixElement.innerText = `Prix: ${article.prix} €`;
+prixElement.innerText = `Prix: ${article.prix} € (${article.prix < 35 ? "€" : "€€€"})`;
 const categorieElement = document.createElement('p');
 categorieElement.innerText = article.categorie;
 
@@ -19,3 +19,4 @@ sectionFiches.appendChild(imageElement);
 sectionFiches.appendChild(nomElement);
 sectionFiches.appendChild(prixElement);
 sectionFiches.appendChild(categorieElement);
+
