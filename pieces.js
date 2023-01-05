@@ -5,7 +5,7 @@ const pieces = await reponse.json();
 for (let i = 0; i < pieces.length; i++) {
 
 //Création des balises
-const article = pieces[0];
+const article = pieces[i];
 const imageElement = document.createElement('img');
 imageElement.src = article.image;
 
