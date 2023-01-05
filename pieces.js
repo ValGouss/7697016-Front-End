@@ -2,6 +2,8 @@
 const reponse = await fetch('pieces-autos.json');
 const pieces = await reponse.json();
 
+for (let i = 0; i < pieces.length; i++) {
+
 //Création des balises
 const article = pieces[0];
 const imageElement = document.createElement('img');
@@ -32,4 +34,4 @@ sectionFiches.appendChild(categorieElement);
 sectionFiches.appendChild(descriptionElement);
 sectionFiches.appendChild(stockElement);
 
-
+}
