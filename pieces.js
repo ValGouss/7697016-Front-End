@@ -39,3 +39,23 @@ for (let i = 0; i < pieces.length; i++) {
     pieceElement.appendChild(stockElement);
 
 }
+
+//Mise en place du bouton Trier
+
+const boutonTrier = document.querySelector(".btn-trier");
+boutonTrier.addEventListener("click", function () {
+    const piecesOrdonnees = Array.from(pieces);
+    piecesOrdonnees.sort(function (a, b) {
+        return a.prix - b.prix;
+    });
+    console.log(piecesOrdonnees);
+});
+
+//Mise en place du bouton Filtrer
+
+const boutonFiltrer = document.querySelector(".btn-filtrer");
+boutonFiltrer.addEventListener("click", function () {
+    const piecesFiltrees = pieces.filtrer(function (piece) {
+        return piece.prix <= 35;
+    });
+});
