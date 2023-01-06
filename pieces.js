@@ -79,4 +79,5 @@ boutonFiltrerSansDescription.addEventListener("click", function () {
     const piecesFiltrees = pieces.filtrer(function (piece) {
         return piece.description == null;
     });
+    console.log(piecesFiltrees);
 });
