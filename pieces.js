@@ -64,6 +64,7 @@ boutonFiltrer.addEventListener("click", function () {
 //Mise en place du bouton Trier decroissant
 
 const boutonTrierDecroisssant = document.querySelector("btn-trierDesc");
+console.lod(boutonTrierDecroisssant);
 boutonTrierDecroisssant.addEventListener("click", function () {
     const piecesOrdonnees = Array.from(pieces);
     piecesOrdonnees.sort(function (a,b) {
