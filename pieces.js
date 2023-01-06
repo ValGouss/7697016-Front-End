@@ -55,7 +55,7 @@ boutonTrier.addEventListener("click", function () {
 
 const boutonFiltrer = document.querySelector(".btn-filtrer");
 boutonFiltrer.addEventListener("click", function () {
-    const piecesFiltrees = pieces.filtrer(function (piece) {
+    const piecesFiltrees = pieces.filter(function (piece) {
         return piece.prix <= 35;
     });
     console.log(piecesFiltrees);
@@ -76,7 +76,7 @@ boutonTrierDecroisssant.addEventListener("click", function () {
 
 const boutonFiltrerSansDescription = document.querySelector("btn-sansDescription");
 boutonFiltrerSansDescription.addEventListener("click", function () {
-    const piecesFiltrees = pieces.filtrer(function (piece) {
+    const piecesFiltrees = pieces.filter(function (piece) {
         return piece.description == null;
     });
     console.log(piecesFiltrees);
