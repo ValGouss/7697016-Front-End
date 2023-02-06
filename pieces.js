@@ -63,8 +63,7 @@ boutonFiltrer.addEventListener("click", function () {
 
 //Mise en place du bouton Trier decroissant
 
-const boutonTrierDecroisssant = document.querySelector("btn-trierDesc");
-console.lod(boutonTrierDecroisssant);
+const boutonTrierDecroisssant = document.querySelector(".btn-triDesc");
 boutonTrierDecroisssant.addEventListener("click", function () {
     const piecesOrdonnees = Array.from(pieces);
     piecesOrdonnees.sort(function (a,b) {
@@ -75,10 +74,22 @@ boutonTrierDecroisssant.addEventListener("click", function () {
 
 //mise en place du bouton Filtrer sans description
 
-const boutonFiltrerSansDescription = document.querySelector("btn-sansDescription");
+const boutonFiltrerSansDescription = document.querySelector(".btn-sansDescription");
 boutonFiltrerSansDescription.addEventListener("click", function () {
     const piecesFiltrees = pieces.filter(function (piece) {
-        return piece.description == null;
+        return piece.description != null;
     });
     console.log(piecesFiltrees);
 });
+
+//Récupération des noms des pièces
+const noms = pieces.map(piece => piece.nom);
+for(let i = pieces.length - 1; i >= 0; i--) {
+    if(pieces[i].prix > 35) {
+        noms.splice(i, 1);
+    }
+}
+console.log(noms);
+
+//Récupération des prix des pièces et multiplication par 2
+const prix_double = pieces.map(piece => piece.prix * 2);
