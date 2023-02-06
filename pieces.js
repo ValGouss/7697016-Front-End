@@ -91,5 +91,14 @@ for(let i = pieces.length - 1; i >= 0; i--) {
 }
 console.log(noms);
 
+//Création d'une liste des pièces abordables
+const abordablesElements = document.createElement('ul');
+for (let i=0; i< nom.length ; i++) {
+    const nomElement = document.createElement('li');
+    nomElement.innerText = noms[i];
+    abordablesElements.appendChild(nomElement);
+};
+document.querySelector('.abordables').appendChild(abordablesElements);
+
 //Récupération des prix des pièces et multiplication par 2
 const prix_double = pieces.map(piece => piece.prix * 2);
