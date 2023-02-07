@@ -1,8 +1,5 @@
 import { ajoutListenerAvis, ajoutListenerEnvoyerAvis } from "./avis.js";
 
-window.localStorage.setItem("nom", "Les Bonnes Pièces !");
-
-const nomEntreprise =window.localStorage.getItem("nom");
 let pieces = window.localStorage.getItem("pieces");
 
 if (pieces === null) {
@@ -58,6 +55,18 @@ function genererPieces (pieces) {
 }
 // Affichage de la page
 genererPieces(pieces);
+
+const piecesId = document.querySelector("#piece-id");
+for(let i = 0; i < pieces.length; i++) {
+        console.log(i);
+        const nom = pieces[i].nom;
+        const id = pieces[i].id;
+        const choix = document.createElement("option");
+        choix.value = id;
+        choix.textContent = `${id} - ${nom}`;
+        piecesId.appendChild(choix);
+
+}
 
 
 //mise en place du boutton accueil
@@ -119,6 +128,12 @@ boutonFiltrerSansDescription.addEventListener("click", function () {
     genererPieces(piecesFiltrees);
 });
 
+//mise en place du bouton mettre à jour
+
+const bouttonMettreAJour = document.querySelector(".btn-maj");
+bouttonMettreAJour.addEventListener("click", function () {
+    window.localStorage.removeItem("pieces");
+});
 
 //Récupération des noms des pièces
 const noms = pieces.map(piece => piece.nom);
@@ -176,7 +191,3 @@ prixMax.addEventListener("input", function(){
     genererPieces(piecesFiltrees);
 });
 
-const bouttonMettreAJour = document.querySelector(".btn-maj");
-bouttonMettreAJour.addEventListener("click", function () {
-    window.localStorage.removeItem("pieces");
-});

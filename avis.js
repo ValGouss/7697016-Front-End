@@ -1,3 +1,4 @@
+
 export function ajoutListenerAvis() {
     const piecesElements = document.querySelectorAll('.fiches article button');
 
@@ -7,13 +8,15 @@ export function ajoutListenerAvis() {
             const id = event.target.dataset.id;
             const reponse = await fetch(`http://localhost:8081/pieces/${id}/avis`);
             const avis = await reponse.json();
+            console.log(avis[i]);
+            console.log(i , avis)
             const pieceElement = event.target.parentElement;
             const etoile = document.createElement('p');
             const avisElement = document.createElement('p');
             for (let i = 0; i < avis.length; i ++) {
                 avisElement.innerHTML += `${avis[i].utilisateur}: ${avis[i].commentaire} <br>`;
             }
-            etoile.innerText = `Nombre d'étoiles: ${avis[i].nbEtoiles} / 5`;
+            etoile.innerText = `Nombre d'étoiles: ${avis[0].nbEtoiles} / 5`;
             pieceElement.appendChild(avisElement);
             pieceElement.appendChild(etoile);
         });
