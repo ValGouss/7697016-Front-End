@@ -15,17 +15,47 @@
 			<!-- Menu de recherche -->
 			<section class="filtres">
 				<h3>Filtres</h3>
+				<button class="btn-accueil">Accueil</button>
+				<br>
 				<button class="btn-trier">Trier par prix croissant</button>
 				<br>
-				<button class="btn-filtrer">Filtrer les pièces non abordables</button>
+				<button class="btn-filtrer">Filtrer les pièces abordables</button>
 				<br>
 				<button class="btn-triDesc">Trier par prix décroissant</button>
 				<br>
 				<button class="btn-sansDescription">Filtrer les pièces sans description</button>
+				<br>
+				<p>Prix maximum :</p>
+				<input type="range" name="prix-max" id="prix-max" min="0" max="60" step="5" list="listePrix">
+				<datalist id="listePrix">
+				<option value="0" label="0 €"></option>
+				<option value="5" label="5 €"></option>
+				<option value="10" label="10 €"></option>
+				<option value="15" label="15 €"></option>
+				<option value="20" label="20 €"></option>
+				<option value="25" label="25 €"></option>
+				<option value="30" label="30 €"></option>
+				<option value="35" label="35 €"></option>
+				<option value="40" label="40 €"></option>
+				<option value="45" label="45 €"></option>
+				<option value="50" label="50 €"></option>
+				<option value="55" label="55 €"></option>
+				<option value="60" label="60 €"></option>
+				</datalist>
 			</section>
 
 			<!-- Fiches produits -->
-			<section class="fiches">
+			<section class="fiche">
+				<div class="abordables">
+					<h2>Pièces abordables :</h2>
+
+				</div>
+				<div class="disponibles">
+					<h2>Pièces disponibles :</h2>
+				</div>
+				<div class="fiches">
+
+				</div>
 			</section>
 		</main>
 	</body>
