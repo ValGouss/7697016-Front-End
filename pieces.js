@@ -38,7 +38,7 @@ function genererPieces (pieces) {
         avisBouton.dataset.id = pieces[i].id;
         avisBouton.textContent = "Afficher les avis";
         pieceElement.appendChild(avisBouton);
-        
+
         //Ratachement de la balise article au body
         document.querySelector(".fiches").appendChild(pieceElement);
     }
