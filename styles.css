@@ -66,3 +66,14 @@ main {
 .fiches article h2 {
 	text-align: center;
 }
+
+#listePrix {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: 50%;
+}
+
+#prix-max {
+	width: 290px;
+}
