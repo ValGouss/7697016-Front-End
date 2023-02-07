@@ -1,8 +1,19 @@
 import { ajoutListenerAvis, ajoutListenerEnvoyerAvis } from "./avis.js";
 
-//Récupération des pièces depuis le fichier JSON
-const reponse = await fetch('http://localhost:8081/pieces/');
-const pieces = await reponse.json();
+window.localStorage.setItem("nom", "Les Bonnes Pièces !");
+
+const nomEntreprise =window.localStorage.getItem("nom");
+let pieces = window.localStorage.getItem("pieces");
+
+if (pieces === null) {
+    //Récupération des pièces depuis le fichier JSON
+    const reponse = await fetch('http://localhost:8081/pieces/');
+    pieces = await reponse.json();
+    window.localStorage.setItem("pieces", JSON.stringify(pieces));
+}
+else {
+    pieces = JSON.parse(pieces);
+}
 
 function genererPieces (pieces) {
     for (let i = 0; i < pieces.length; i++) {
@@ -163,4 +174,9 @@ prixMax.addEventListener("input", function(){
     console.log(piecesFiltrees);
     document.querySelector(".fiches").innerHTML = "";
     genererPieces(piecesFiltrees);
+});
+
+const bouttonMettreAJour = document.querySelector(".btn-maj");
+bouttonMettreAJour.addEventListener("click", function () {
+    window.localStorage.removeItem("pieces");
 });

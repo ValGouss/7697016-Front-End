@@ -37,7 +37,17 @@ main {
 	padding: 8px;
 	min-width: 300px;
 	min-height: 400px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
 }
+
+.filtres option {
+	align-items: normal;
+	display: inherit;
+	padding: 6.5px;
+}
+
 .filtres h3 {
 	text-align: center;
 }
@@ -65,6 +75,21 @@ main {
 }
 .fiches article h2 {
 	text-align: center;
+}
+
+button {
+	width: 200px;  
+	display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form {
+	width: 200px;  
+	display: flex;
+    align-items: center;
+    justify-content: space-around;
+	flex-direction: column;
 }
 
 #listePrix {
